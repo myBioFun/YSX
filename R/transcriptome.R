@@ -282,7 +282,7 @@ deseq2normalizedExpr <- function(dds, output_prefix='ehbio', rlog=T, vst=F, save
 
 
   if (vst) {
-    rld <- DESEq2::vst(dds, blind=FALSE)
+    rld <- DESeq2::vst(dds, blind=FALSE)
     vstMat <- assay(rld)
     vstMat_mad <- apply(vstMat, 1, mad)
     vstMat <- vstMat[order(vstMat_mad, decreasing=T), ]
